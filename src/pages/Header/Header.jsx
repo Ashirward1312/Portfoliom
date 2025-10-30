@@ -1,123 +1,88 @@
-import React, { useState } from 'react';
-import { Building2, Menu, X, Phone, Mail, MapPin } from 'lucide-react';
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const nav = [
+    { label: "Home", href: "#" },
+    { label: "Experties", href: "#experties" },
+    // { label: "Services", href: "#services" },
+    // { label: "Cities", href: "#cities" },
+    { label: "About", href: "#about" },
+    { label: "Contact", href: "#contact" },
+  ];
 
   return (
-    <div className='w-full flex items-center justify-center bg-white shadow-sm sticky top-0 z-50'> 
-      {/* main container */}
-      <div className="max-w-[1200px] w-full px-4">
-        {/* content container */}
-        <header className="py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <div className="flex items-center space-x-3">
-              <div className="bg-blue-600 p-2 rounded-lg">
-                <Building2 className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">PropertyPro</h1>
-                <p className="text-xs text-gray-500">All India Properties</p>
-              </div>
-            </div>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-gray-700 hover:text-blue-600 transition font-medium">
-                Home
-              </a>
-              <a href="#about" className="text-gray-700 hover:text-blue-600 transition font-medium">
-                About
-              </a>
-              <a href="#properties" className="text-gray-700 hover:text-blue-600 transition font-medium">
-                Properties
-              </a>
-              <a href="#services" className="text-gray-700 hover:text-blue-600 transition font-medium">
-                Services
-              </a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition font-medium">
-                Contact
-              </a>
-            </nav>
-
-            {/* Contact Button & Mobile Menu Toggle */}
-            <div className="flex items-center space-x-4">
-              <a 
-                href="tel:+919876543210" 
-                className="hidden lg:flex items-center space-x-2 bg-blue-600 text-white px-6 py-2.5 rounded-full hover:bg-blue-700 transition"
-              >
-                <Phone className="h-4 w-4" />
-                <span className="font-medium">Call Now</span>
-              </a>
-
-              {/* Mobile Menu Button */}
-              <button 
-                className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-              >
-                {isMenuOpen ? (
-                  <X className="h-6 w-6 text-gray-700" />
-                ) : (
-                  <Menu className="h-6 w-6 text-gray-700" />
-                )}
-              </button>
-            </div>
+    <header className="w-full sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-blue-100">
+      <div className="max-w-7xl mx-auto h-16 md:h-20 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        {/* Brand with hover color change on the logo */}
+        <a href="/" className="group flex items-center gap-3">
+          <div
+            className="
+              relative h-10 w-10 rounded-xl grid place-content-center font-bold text-white
+              bg-gradient-to-br from-blue-600 to-sky-500
+              ring-1 ring-blue-300/30 shadow-sm
+              transition-all duration-300
+              group-hover:from-sky-500 group-hover:to-blue-700
+              group-hover:ring-blue-400 group-hover:scale-105
+            "
+            aria-label="Logo"
+            title="Pradeep Maheshwari"
+          >
+            PM
           </div>
+          <span className="text-lg md:text-xl font-semibold text-gray-900 transition-colors group-hover:text-blue-700">
+            Pradeep Maheshwari
+          </span>
+        </a>
 
-          {/* Mobile Menu */}
-          {isMenuOpen && (
-            <div className="md:hidden mt-4 py-4 border-t border-gray-100">
-              <nav className="flex flex-col space-y-4">
-                <a 
-                  href="#home" 
-                  className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-lg transition font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Home
-                </a>
-                <a 
-                  href="#about" 
-                  className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-lg transition font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About
-                </a>
-                <a 
-                  href="#properties" 
-                  className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-lg transition font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Properties
-                </a>
-                <a 
-                  href="#services" 
-                  className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-lg transition font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Services
-                </a>
-                <a 
-                  href="#contact" 
-                  className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-lg transition font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Contact
-                </a>
-                
-                {/* Mobile Contact Button */}
-                <a 
-                  href="tel:+919876543210" 
-                  className="flex items-center justify-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition font-medium"
-                >
-                  <Phone className="h-4 w-4" />
-                  <span>Call Now</span>
-                </a>
-              </nav>
-            </div>
-          )}
-        </header>
+        {/* Desktop navigation (no CTAs) */}
+        <nav className="hidden md:flex items-center gap-7">
+          {nav.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className="
+                relative text-gray-700 hover:text-blue-700 transition
+                focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 rounded
+              "
+            >
+              {item.label}
+              <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full" />
+            </a>
+          ))}
+        </nav>
+
+        {/* Mobile menu button */}
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-label="Toggle menu"
+          aria-expanded={open}
+          className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition"
+        >
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
       </div>
-    </div>
+
+      {/* Mobile menu (no CTAs) */}
+      {open && (
+        <div className="md:hidden border-t border-blue-100 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-3">
+            {nav.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="block text-gray-700 hover:text-blue-700 transition"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </header>
   );
 }

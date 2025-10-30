@@ -31,14 +31,7 @@ export default function PropertyHero() {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#properties"
-                className="bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition flex items-center justify-center gap-2 shadow-lg shadow-blue-200"
-              >
-                <span className="font-semibold">Explore Properties</span>
-                <ChevronRight className="h-5 w-5" />
-              </a>
+            <div className="flex items-center space-x-4">
               <a
                 href="#consultation"
                 className="bg-blue-50 text-blue-700 px-8 py-4 rounded-full hover:bg-blue-100 transition font-semibold border border-blue-100"
