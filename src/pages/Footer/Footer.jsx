@@ -70,10 +70,10 @@ export default function FooterPM({
             <ul className="mt-5 space-y-3">
               {[
                 { label: "Home", href: "#" },
-                { label: "Service", href: "#" },
-                { label: "About", href: "#" },
-                { label: "Testimonials", href: "#" },
-                { label: "Contact", href: "#" },
+                // { label: "Service", href: "#" },
+                // { label: "About", href: "#" },
+                { label: "Testimonials", href: "#testimonials" },
+                { label: "Contact", href: "#contact" },
               ].map((l) => (
                 <li key={l.label}>
                   <a className="text-slate-300 hover:text-blue-400 transition-colors" href={l.href}>

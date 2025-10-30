@@ -43,10 +43,10 @@ export default function ContactWithUs() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {/* Header */}
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+            <span className="inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xm font-semibold text-blue-700">
               Contact us
             </span>
-            <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+            <h1 className="mt-3 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
               We’d love to hear from you
             </h1>
             <p className="mt-3 text-slate-600">

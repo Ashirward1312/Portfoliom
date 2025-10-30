@@ -1,7 +1,7 @@
 import React from 'react'
 import Hero from './pages/home/Hero.jsx'
 import Header from './pages/Header/Header.jsx'
-import About from './pages/about/About.jsx'
+// import About from './pages/about/About.jsx'
 import Expert from './pages/Experties/Expert.jsx'
 import Transactions from './pages/transactions/Transactions.jsx'
 import Testimonials from './pages/Testomonials/Testomonials.jsx'
@@ -14,7 +14,7 @@ function App() {
     <div>
       <Header />
       <Hero />
-      <About />
+      {/* <About /> */}
       <Expert />
       <Transactions />
       <Testimonials />

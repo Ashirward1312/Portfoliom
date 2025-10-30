@@ -50,7 +50,7 @@ const DEFAULT_TESTIMONIALS = [
 
 export default function TestimonialsBlue({ items = DEFAULT_TESTIMONIALS }) {
   return (
-    <main className="min-h-screen bg-[#F6F9FF]">
+    <main className="min-h-screen bg-[#F6F9FF]"id="testimonials">
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {/* Header */}
