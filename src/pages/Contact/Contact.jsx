@@ -28,24 +28,23 @@ export default function ContactWithUs() {
   async function handleSubmit(e) {
     e.preventDefault();
     setStatus("loading");
-    // TODO: Replace with your real endpoint
     setTimeout(() => setStatus("success"), 900); // demo
   }
 
   return (
-    <main className=" bg-gradient-to-b from-blue-50/40 to-white" id="contact">
-      <section className="py-16 lg:py-24">
+    <main className="relative bg-neutral-950 text-neutral-100 -mb-8 md:-mb-12" id="contact">
+      <section className="relative py-16 lg:py-24 pb-0">
         {/* Fixed 1200px container */}
-        <div className="w-full max-w-[1200px] mx-auto">
+        <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6">
           {/* Header */}
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xm font-semibold text-blue-700">
+            <span className="inline-flex items-center rounded-full border border-orange-400/30 bg-orange-500/10 px-3 py-1 text-xs sm:text-sm font-semibold text-orange-300">
               Contact us
             </span>
-            <h1 className="mt-3 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+            <h1 className="mt-3 text-2xl font-extrabold tracking-tight text-white sm:text-5xl">
               We’d love to hear from you
             </h1>
-            <p className="mt-3 text-slate-600">
+            <p className="mt-3 text-neutral-300">
               Have a question or want to book a site visit? Send us a message and our
               team will respond soon.
             </p>
@@ -54,46 +53,46 @@ export default function ContactWithUs() {
           {/* Content */}
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             {/* Left: Contact details */}
-            <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
-              <h2 className="text-xl font-semibold text-slate-900">Get in touch</h2>
-              <p className="mt-2 text-slate-600">
+            <div className="rounded-3xl border border-white/10 bg-black/50 p-6 sm:p-8 ring-1 ring-white/10 backdrop-blur">
+              <h2 className="text-xl font-semibold text-white">Get in touch</h2>
+              <p className="mt-2 text-neutral-300">
                 Reach out via phone or email, or visit our office during working hours.
               </p>
 
               <ul className="mt-6 space-y-4">
                 <li className="flex items-start gap-3">
-                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-blue-50 text-blue-600">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-orange-500/10 text-orange-300 ring-1 ring-orange-400/30">
                     <PhoneIcon className="h-5 w-5" />
                   </span>
                   <div>
-                    <div className="text-slate-900 font-medium">+91 98765 43210</div>
-                    <div className="text-sm text-slate-500">Mon–Sat support line</div>
+                    <div className="text-white font-medium">+91 98765 43210</div>
+                    <div className="text-sm text-neutral-400">Mon–Sat support line</div>
                   </div>
                 </li>
 
                 <li className="flex items-start gap-3">
-                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-blue-50 text-blue-600">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-orange-500/10 text-orange-300 ring-1 ring-orange-400/30">
                     <MailIcon className="h-5 w-5" />
                   </span>
                   <div>
-                    <div className="text-slate-900 font-medium">hello@yourbrand.com</div>
-                    <div className="text-sm text-slate-500">We reply within 1 business day</div>
+                    <div className="text-white font-medium">hello@yourbrand.com</div>
+                    <div className="text-sm text-neutral-400">We reply within 1 business day</div>
                   </div>
                 </li>
 
                 <li className="flex items-start gap-3">
-                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-blue-50 text-blue-600">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-orange-500/10 text-orange-300 ring-1 ring-orange-400/30">
                     <PinIcon className="h-5 w-5" />
                   </span>
                   <div>
-                    <div className="text-slate-900 font-medium">
+                    <div className="text-white font-medium">
                       123 MG Road, Bengaluru, KA 560001
                     </div>
                     <a
                       href="https://maps.google.com/?q=123 MG Road, Bengaluru, KA 560001"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-sm font-medium text-blue-600 hover:underline"
+                      className="text-sm font-medium text-orange-300 hover:text-orange-200 hover:underline"
                     >
                       Open in Maps
                     </a>
@@ -101,9 +100,9 @@ export default function ContactWithUs() {
                 </li>
               </ul>
 
-              <div className="mt-6 rounded-2xl bg-slate-50 p-4">
-                <div className="text-sm text-slate-600">
-                  <span className="font-medium text-slate-700">Working hours</span>
+              <div className="mt-6 rounded-2xl bg-black/40 p-4 ring-1 ring-white/10">
+                <div className="text-sm text-neutral-300">
+                  <span className="font-medium text-neutral-200">Working hours</span>
                   <br />
                   Mon–Sat: 9:30 AM – 6:30 PM
                 </div>
@@ -111,10 +110,10 @@ export default function ContactWithUs() {
             </div>
 
             {/* Right: Form */}
-            <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
+            <div className="rounded-3xl border border-white/10 bg-black/50 p-6 sm:p-8 ring-1 ring-white/10 backdrop-blur">
               {status === "success" ? (
                 <div
-                  className="rounded-2xl bg-blue-50 p-6 text-blue-800"
+                  className="rounded-2xl bg-orange-500/10 p-6 text-orange-200 ring-1 ring-orange-400/30"
                   role="status"
                   aria-live="polite"
                 >
@@ -127,7 +126,7 @@ export default function ContactWithUs() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
-                      <label className="mb-1 block text-sm font-medium text-slate-700">
+                      <label className="mb-1 block text-sm font-medium text-neutral-200">
                         Name
                       </label>
                       <input
@@ -135,11 +134,11 @@ export default function ContactWithUs() {
                         name="name"
                         required
                         placeholder="Your name"
-                        className="block w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-slate-900 placeholder-slate-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="block w-full rounded-xl border border-white/10 bg-neutral-900/70 px-3 py-2.5 text-neutral-100 placeholder-neutral-400 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
                       />
                     </div>
                     <div>
-                      <label className="mb-1 block text-sm font-medium text-slate-700">
+                      <label className="mb-1 block text-sm font-medium text-neutral-200">
                         Email
                       </label>
                       <input
@@ -147,25 +146,25 @@ export default function ContactWithUs() {
                         name="email"
                         required
                         placeholder="you@example.com"
-                        className="block w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-slate-900 placeholder-slate-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="block w-full rounded-xl border border-white/10 bg-neutral-900/70 px-3 py-2.5 text-neutral-100 placeholder-neutral-400 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="mb-1 block text-sm font-medium text-slate-700">
+                    <label className="mb-1 block text-sm font-medium text-neutral-200">
                       Phone (optional)
                     </label>
                     <input
                       type="tel"
                       name="phone"
                       placeholder="+91 ..."
-                      className="block w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-slate-900 placeholder-slate-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="block w-full rounded-xl border border-white/10 bg-neutral-900/70 px-3 py-2.5 text-neutral-100 placeholder-neutral-400 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
                     />
                   </div>
 
                   <div>
-                    <label className="mb-1 block text-sm font-medium text-slate-700">
+                    <label className="mb-1 block text-sm font-medium text-neutral-200">
                       Message
                     </label>
                     <textarea
@@ -173,17 +172,17 @@ export default function ContactWithUs() {
                       required
                       rows="6"
                       placeholder="How can we help you?"
-                      className="block w-full resize-y rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-slate-900 placeholder-slate-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="block w-full resize-y rounded-xl border border-white/10 bg-neutral-900/70 px-3 py-2.5 text-neutral-100 placeholder-neutral-400 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
                     />
                   </div>
 
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-neutral-400">
                     By submitting, you agree to our{" "}
-                    <a href="#terms" className="font-medium text-blue-600 hover:underline">
+                    <a href="#terms" className="font-medium text-orange-300 hover:text-orange-200 hover:underline">
                       Terms
                     </a>{" "}
                     &{" "}
-                    <a href="#privacy" className="font-medium text-blue-600 hover:underline">
+                    <a href="#privacy" className="font-medium text-orange-300 hover:text-orange-200 hover:underline">
                       Privacy Policy
                     </a>
                     .
@@ -193,7 +192,7 @@ export default function ContactWithUs() {
                     <button
                       type="submit"
                       disabled={status === "loading"}
-                      className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-70"
+                      className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 px-5 py-3 font-semibold text-white shadow-sm ring-1 ring-orange-400/40 transition-all hover:from-orange-500 hover:to-amber-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:cursor-not-allowed disabled:opacity-70"
                     >
                       {status === "loading" ? (
                         "Sending..."
@@ -207,7 +206,7 @@ export default function ContactWithUs() {
                   </div>
 
                   {status === "error" && (
-                    <p className="text-sm text-red-600" role="alert">
+                    <p className="text-sm text-red-400" role="alert">
                       Something went wrong. Please try again.
                     </p>
                   )}
@@ -217,12 +216,20 @@ export default function ContactWithUs() {
           </div>
         </div>
 
-        {/* subtle gradient aura */}
+        {/* Top orange aura */}
         <div
           className="pointer-events-none absolute inset-x-0 -z-10 top-0 h-64"
           style={{
             background:
-              "radial-gradient(60% 60% at 50% 0%, rgba(59,130,246,0.12) 0%, rgba(59,130,246,0) 70%)",
+              "radial-gradient(60% 60% at 50% 0%, rgba(249,115,22,0.12) 0%, rgba(0,0,0,0) 70%)",
+          }}
+        />
+        {/* Bottom orange aura to cover any gap */}
+        <div
+          className="pointer-events-none absolute inset-x-0 -z-10 bottom-0 h-40"
+          style={{
+            background:
+              "radial-gradient(60% 60% at 50% 100%, rgba(249,115,22,0.10) 0%, rgba(0,0,0,0) 70%)",
           }}
         />
       </section>

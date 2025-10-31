@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Achievements() {
   const imageUrl =
-    "https://media.istockphoto.com/id/1409520341/photo/group-of-young-people-discussing-in-the-co-working-office.webp?a=1&b=1&s=612x612&w=0&k=20&c=P4YjC3AEogPzkRnpta_IFFr2Pa5idqqU11-neJx_Ars="; // replace with your own image
+    "https://images.pexels.com/photos/8518660/pexels-photo-8518660.jpeg"; // keep same image
 
   const details = [
     "20+ Years of Expertise in strategy building, project management, and real estate marketing.",
@@ -16,25 +16,24 @@ export default function Achievements() {
   ];
 
   return (
-    <main id="achievements" className="bg-gradient-to-b from-white to-blue-50 py-20 px-6">
+    <main id="achievements" className="bg-neutral-950 text-neutral-100 py-20 px-6">
       <section className="w-full max-w-[1200px] mx-auto">
         {/* Single heading */}
-         <div className="w-full flex justify-center mb-6">
-  <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1 text-xm font-semibold text-blue-700 ring-1 ring-blue-100">
-   Achievements
-  </span>
-</div>
-
+        <div className="w-full flex justify-center mb-6">
+          <span className="inline-flex items-center gap-2 rounded-full bg-orange-500/10 px-4 py-1 text-xs sm:text-sm font-semibold text-orange-300 ring-1 ring-orange-400/30">
+            Achievements
+          </span>
+        </div>
 
         {/* Grid: Left details, Right image */}
         <div className="grid gap-10 lg:grid-cols-12 items-stretch">
-          {/* Left - All Details */}
+          {/* Left - All Details (dark + orange) */}
           <div className="lg:col-span-8 self-stretch">
-            <div className="bg-white rounded-2xl shadow-md border border-gray-100 p-8 sm:p-10 space-y-6">
+            <div className="bg-black/50 rounded-2xl shadow-sm ring-1 ring-white/10 p-8 sm:p-10 backdrop-blur space-y-6">
               {details.map((line, index) => (
                 <p
                   key={index}
-                  className="text-gray-700 text-base sm:text-lg leading-relaxed border-l-4 border-blue-500 pl-4 hover:bg-blue-50/40 transition-all duration-300 rounded-md"
+                  className="text-neutral-200 text-base sm:text-lg leading-relaxed border-l-4 border-orange-500 pl-4 rounded-md transition-all duration-300 hover:bg-white/5"
                 >
                   {line}
                 </p>
@@ -42,20 +41,29 @@ export default function Achievements() {
             </div>
           </div>
 
-          {/* Right - Image */}
+          {/* Right - Image (same design, dark surface) */}
           <div className="lg:col-span-4 self-stretch">
-            <div className="relative h-full rounded-2xl overflow-hidden shadow-lg border border-gray-100 group">
+            <div className="relative h-full rounded-2xl overflow-hidden shadow-xl bg-black/50 ring-1 ring-white/10 group">
               <img
                 src={imageUrl}
                 alt="Achievements"
                 className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
               />
               {/* Soft overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-30 group-hover:opacity-50 transition-opacity"></div>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-40 group-hover:opacity-60 transition-opacity"></div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* subtle orange aura */}
+      <div
+        className="pointer-events-none absolute inset-x-0 -z-10 top-0 h-64"
+        style={{
+          background:
+            "radial-gradient(60% 60% at 50% 0%, rgba(249,115,22,0.12) 0%, rgba(0,0,0,0) 70%)",
+        }}
+      />
     </main>
   );
 }

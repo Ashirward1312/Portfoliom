@@ -28,7 +28,7 @@ const DEFAULT_TESTIMONIALS = [
     name: "Mr. Robey Alexa",
     role: "CEO, Xara Agency",
     avatar:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&h=200&fit=crop&crop=faces",
+      "https://images.pexels.com/photos/14983798/pexels-photo-14983798.jpeg",
   },
   {
     quote:
@@ -36,7 +36,7 @@ const DEFAULT_TESTIMONIALS = [
     name: "Aarav Mehta",
     role: "Partner",
     avatar:
-      "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=200&h=200&fit=crop&crop=faces",
+      "https://images.pexels.com/photos/9604304/pexels-photo-9604304.jpeg",
   },
   {
     quote:
@@ -44,22 +44,22 @@ const DEFAULT_TESTIMONIALS = [
     name: "Sara Khan",
     role: "Director",
     avatar:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=200&h=200&fit=crop&crop=faces",
+      "https://images.pexels.com/photos/1759524/pexels-photo-1759524.jpeg",
   },
 ];
 
 export default function TestimonialsBlue({ items = DEFAULT_TESTIMONIALS }) {
   return (
-    <main className=" bg-[#F6F9FF]" id="testimonials">
+    <main className="bg-neutral-950 text-neutral-100" id="testimonials">
       <section className="relative py-16 lg:py-24">
         {/* Fixed 1200px container */}
-        <div className="mx-auto max-w-[1200px] mx-auto">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
           {/* Header */}
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xm font-semibold uppercase tracking-widest text-blue-600">
+            <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-orange-400">
               Our Testimonials
             </p>
-            <h1 className="mt-3 text-3xl font-extrabold leading-tight text-slate-900 sm:text-5xl">
+            <h1 className="mt-3 text-3xl font-extrabold leading-tight text-white sm:text-5xl">
               We Are Very Glad To Get
               <br className="hidden sm:block" /> Client Review
             </h1>
@@ -70,15 +70,15 @@ export default function TestimonialsBlue({ items = DEFAULT_TESTIMONIALS }) {
             {items.map(({ quote, name, role, avatar }, idx) => (
               <article
                 key={idx}
-                className="relative rounded-3xl border border-slate-200 bg-white p-8 shadow-sm ring-1 ring-slate-100 transition hover:shadow-md"
+                className="relative rounded-3xl border border-white/10 bg-black/50 p-8 shadow-lg shadow-black/30 ring-1 ring-white/10 backdrop-blur transition hover:border-orange-400/30 hover:ring-orange-400/20 hover:shadow-black/40"
               >
-                <div className="flex items-center gap-1 text-blue-500">
+                <div className="flex items-center gap-1 text-orange-400">
                   {[...Array(5)].map((_, i) => (
                     <StarIcon key={i} className="h-5 w-5" />
                   ))}
                 </div>
 
-                <p className="mt-4 text-[17px] leading-relaxed text-slate-700">
+                <p className="mt-4 text-[17px] leading-relaxed text-neutral-300">
                   “{quote}”
                 </p>
 
@@ -86,28 +86,28 @@ export default function TestimonialsBlue({ items = DEFAULT_TESTIMONIALS }) {
                   <img
                     src={avatar}
                     alt=""
-                    className="h-14 w-14 rounded-full object-cover ring-1 ring-slate-200"
+                    className="h-14 w-14 rounded-full object-cover ring-1 ring-white/10"
                   />
                   <div>
-                    <div className="text-lg font-semibold text-slate-900">
+                    <div className="text-lg font-semibold text-white">
                       {name}
                     </div>
-                    <div className="text-sm text-slate-500">{role}</div>
+                    <div className="text-sm text-neutral-400">{role}</div>
                   </div>
                 </footer>
 
-                <QuoteIcon className="pointer-events-none absolute bottom-6 right-6 h-10 w-10 text-blue-200/60" />
+                <QuoteIcon className="pointer-events-none absolute bottom-6 right-6 h-10 w-10 text-orange-400/30" />
               </article>
             ))}
           </div>
         </div>
 
-        {/* subtle corner gradient (anchored to section) */}
+        {/* subtle top aura (orange) */}
         <div
           className="pointer-events-none absolute inset-x-0 -z-10 top-0 h-64"
           style={{
             background:
-              "radial-gradient(60% 60% at 50% 0%, rgba(59,130,246,0.12) 0%, rgba(59,130,246,0) 70%)",
+              "radial-gradient(60% 60% at 50% 0%, rgba(249,115,22,0.12) 0%, rgba(0,0,0,0) 70%)",
           }}
         />
       </section>

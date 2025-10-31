@@ -1,6 +1,5 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-// Note: Agar aap X (new Twitter) icon chahte ho, use this instead of FaTwitter:
 import { FaXTwitter } from "react-icons/fa6";
 
 const Pin = (props) => (
@@ -25,8 +24,8 @@ const SocialLink = ({ href, label, children }) => (
     aria-label={label}
     target="_blank"
     rel="noreferrer"
-    className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-slate-300 transition-colors hover:border-blue-400 hover:text-blue-400"
     title={label}
+    className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-neutral-300 transition-colors hover:border-orange-400 hover:text-orange-400 hover:bg-orange-500/10"
   >
     {children}
   </a>
@@ -41,43 +40,40 @@ export default function FooterPM({
     facebook: "#",
     instagram: "#",
     linkedin: "#",
-    twitter: "#", // ya x
+    twitter: "#",
   },
 }) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-16 bg-[#0B1220] text-slate-300 border-t border-white/10">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <footer className="-mt-8 md:-mt-12 bg-neutral-950 text-neutral-300 border-t border-white/10">
+      <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
         {/* Top */}
         <div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
             <h3 className="text-3xl font-extrabold tracking-tight">
               <span className="text-white">Pradeep</span>{" "}
-              <span className="text-blue-500">Maheshwari</span>
+              <span className="text-orange-400">Maheshwari</span>
             </h3>
             <p className="mt-4 max-w-md leading-relaxed">
-              {brand} Your trusted real estate partner in Raipur — helping you discover modern properties, premium offices, 
-              and verified homes with transparency and ease
+              {brand} — Your trusted real estate partner in Raipur — helping you discover modern properties, premium offices, and verified homes with transparency and ease.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xl font-semibold text-blue-400">Quick Links</h4>
+            <h4 className="text-xl font-semibold text-orange-400">Quick Links</h4>
             <ul className="mt-5 space-y-3">
               {[
                 { label: "Home", href: "#" },
-                // { label: "Service", href: "#" },
-                // { label: "About", href: "#" },
                 { label: "Testimonials", href: "#testimonials" },
                 { label: "Contact", href: "#contact" },
                 { label: "Expertise", href: "#expertise" },
                 { label: "Achievements", href: "#achievements" },
               ].map((l) => (
                 <li key={l.label}>
-                  <a className="text-slate-300 hover:text-blue-400 transition-colors" href={l.href}>
+                  <a className="hover:text-orange-300 transition-colors" href={l.href}>
                     {l.label}
                   </a>
                 </li>
@@ -87,36 +83,36 @@ export default function FooterPM({
 
           {/* Contact */}
           <div>
-            <h4 className="text-xl font-semibold text-blue-400">Contact Us</h4>
+            <h4 className="text-xl font-semibold text-orange-400">Contact Us</h4>
             <ul className="mt-5 space-y-4">
               <li className="flex items-start gap-3">
-                <span className="grid h-9 w-9 place-items-center rounded-lg bg-blue-500/10 text-blue-400">
+                <span className="grid h-9 w-9 place-items-center rounded-lg bg-orange-500/10 text-orange-300 ring-1 ring-orange-400/20">
                   <Pin className="h-5 w-5" />
                 </span>
                 <span>{address}</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="grid h-9 w-9 place-items-center rounded-lg bg-blue-500/10 text-blue-400">
+                <span className="grid h-9 w-9 place-items-center rounded-lg bg-orange-500/10 text-orange-300 ring-1 ring-orange-400/20">
                   <Phone className="h-5 w-5" />
                 </span>
-                <a href={`tel:${phone.replace(/\s+/g, "")}`} className="hover:text-blue-400">
+                <a href={`tel:${phone.replace(/\s+/g, "")}`} className="hover:text-orange-300">
                   {phone}
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <span className="grid h-9 w-9 place-items-center rounded-lg bg-blue-500/10 text-blue-400">
+                <span className="grid h-9 w-9 place-items-center rounded-lg bg-orange-500/10 text-orange-300 ring-1 ring-orange-400/20">
                   <Mail className="h-5 w-5" />
                 </span>
-                <a href={`mailto:${email}`} className="hover:text-blue-400">
+                <a href={`mailto:${email}`} className="hover:text-orange-300">
                   {email}
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Socials with real logos */}
+          {/* Socials */}
           <div>
-            <h4 className="text-xl font-semibold text-blue-400">Follow Us</h4>
+            <h4 className="text-xl font-semibold text-orange-400">Follow Us</h4>
             <div className="mt-6 flex items-center gap-3">
               <SocialLink href={socials.facebook} label="Facebook">
                 <FaFacebookF className="h-4 w-4" />
@@ -127,18 +123,15 @@ export default function FooterPM({
               <SocialLink href={socials.linkedin} label="LinkedIn">
                 <FaLinkedinIn className="h-4 w-4" />
               </SocialLink>
-              <SocialLink href={socials.twitter} label="Twitter">
+              <SocialLink href={socials.twitter} label="Twitter / X">
                 <FaXTwitter className="h-4 w-4" />
-                {/* <FaTwitter className="h-4 w-4" /> */}
-                {/* If you prefer the new X logo:
-                <FaXTwitter className="h-4 w-4" /> */}
               </SocialLink>
             </div>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 py-6 text-center text-sm text-slate-400">
+        <div className="border-t border-white/10 py-6 text-center text-sm text-neutral-400">
           © {year} {brand}. All rights reserved.
         </div>
       </div>
