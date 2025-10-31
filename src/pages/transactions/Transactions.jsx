@@ -94,7 +94,7 @@ export default function WhyChooseUs() {
         <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
           {/* Header */}
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-orange-500/10 px-3 py-1 text-[16px] font-semibold uppercase tracking-wider text-orange-400 ring-1 ring-orange-400/30">
+            <span className="inline-flex items-center gap-2 rounded-full bg-orange-500/10 px-3 py-1 text-[19px] font-semibold uppercase tracking-wider text-orange-400 ring-1 ring-orange-400/30">
               <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
               Why Choose Us
             </span>

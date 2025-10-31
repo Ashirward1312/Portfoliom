@@ -39,7 +39,7 @@ const OurExpertise = () => {
       <div className="max-w-[1200px] mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-3xl font-bold mb-5">
+          <h2 className="text-4xl md:text-5xl font-bold mb-5">
             Our{" "}
             <span className="bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent">
               Expertise

@@ -27,7 +27,7 @@ export default function Achievements() {
           <div className="lg:col-span-8 self-stretch">
             <div className="bg-black/50 rounded-2xl shadow-sm ring-1 ring-white/10 p-8 sm:p-10 backdrop-blur space-y-6">
               {/* Heading inside same box */}
-              <h2 className="text-4xl md:text-3xl font-bold mb-6">
+              <h2 className="text-4xl md:text-6xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-orange-400 via-amber-300 to-orange-200 bg-clip-text text-transparent">
                   Key Achievements & Leadership Roles
                 </span>
