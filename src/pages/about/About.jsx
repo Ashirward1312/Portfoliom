@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckCircle2, Building2, Network, Lightbulb } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import img from "../../Images/c.jpeg";
 
 export default function LeaderProfile() {
@@ -9,7 +9,7 @@ export default function LeaderProfile() {
     "Leadership in innovative real estate models",
     "20+ years in strategy, sales, and marketing",
     "Real Estate Expert • Sales Trainer — inspiring growth and excellence in the property sector.",
-    "Motivator — inspiring growth and excellence in the property sector."
+    "Motivator — inspiring growth and excellence in the property sector.",
   ];
 
   return (
@@ -17,25 +17,23 @@ export default function LeaderProfile() {
       id="leader"
       className="relative py-16 lg:py-24 bg-neutral-950 text-neutral-100 overflow-hidden"
     >
-      {/* container fixed 1200 */}
       <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6">
-        <div className="grid items-center gap-10 lg:grid-cols-12">
-          {/* LEFT: Photo (same design, no change) */}
-          <div className="lg:col-span-5 xl:col-span-4">
-            <div className="relative mx-auto max-w-[420px] md:max-w-[460px] lg:max-w-[420px]">
+        {/* items-stretch so both columns are equal height */}
+        <div className="grid items-stretch gap-10 lg:grid-cols-12">
+          {/* LEFT: Photo fills column height */}
+          <div className="lg:col-span-5 xl:col-span-4 self-stretch">
+            <div className="relative h-[380px] sm:h-[420px] md:h-[460px] lg:h-full w-full overflow-hidden rounded-2xl bg-black/50 ring-1 ring-white/10 shadow-xl">
               <img
                 src={img}
                 alt="Pradeep Maheshwari"
-                className="
-                  w-full aspect-[4/5]
-                  object-contain object-[50%_15%]
-                "
+                className="h-full w-full object-cover object-[50%_15%] transition-transform duration-500 ease-out hover:scale-[1.02]"
               />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
             </div>
           </div>
 
-          {/* RIGHT: Content (Black + Orange theme) */}
-          <div className="lg:col-span-7">
+          {/* RIGHT: Content */}
+          <div className="lg:col-span-7 self-stretch">
             <span className="inline-flex items-center gap-2 rounded-full bg-orange-500/10 px-4 py-1 text-xm font-semibold text-orange-200 ring-1 ring-orange-400/30">
               Leadership Profile
             </span>
@@ -44,7 +42,7 @@ export default function LeaderProfile() {
               Pradeep Maheshwari
             </h1>
 
-            <p className="mt-1 text-white-200/90 font-semibold">
+            <p className="mt-1 text-neutral-200/90 font-semibold">
               Strategic Leader • Real Estate Visionary • Executive Vice President, CAIT Chhattisgarh
             </p>
 
@@ -67,9 +65,6 @@ export default function LeaderProfile() {
                 </li>
               ))}
             </ul>
-
-            {/* Badges */}
-           
           </div>
         </div>
       </div>

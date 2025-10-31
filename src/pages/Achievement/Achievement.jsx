@@ -19,10 +19,12 @@ export default function Achievements() {
     <main id="achievements" className="bg-neutral-950 text-neutral-100 py-20 px-6">
       <section className="w-full max-w-[1200px] mx-auto">
         {/* Single heading */}
-        <div className="w-full flex justify-center mb-6">
-          <span className="inline-flex items-center gap-2 rounded-full bg-orange-500/10 px-4 py-1 text-xs sm:text-sm font-semibold text-orange-300 ring-1 ring-orange-400/30">
-            Achievements
-          </span>
+        <div className="text-center">
+          <h2 className="text-4xl md:text-3xl font-bold mb-5 inline-block">
+            <span className="bg-gradient-to-r from-orange-400 via-amber-300 to-orange-200 bg-clip-text text-transparent">
+              Key Achievements & Leadership Roles
+            </span>
+          </h2>
         </div>
 
         {/* Grid: Left details, Right image */}

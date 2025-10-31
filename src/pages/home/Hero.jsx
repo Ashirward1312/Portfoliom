@@ -33,11 +33,11 @@ export default function PropertyHero() {
               <span className="bg-gradient-to-r from-orange-400 via-amber-300 to-orange-200 bg-clip-text text-transparent"> Raipur Real Estate</span>
             </h1>
 
-            <p className="mt-2 text-neutral-300 text-base leading-relaxed">
-              With 20+ years in real estate strategy, sales, and marketing, Pradeep Maheshwari is one of Chhattisgarh’s most respected professionals.
-              He has led strategic planning for major developers and built strong broker networks across India.
-              His leadership drives innovation in modern real estate models and growth across the sector.
-            </p>
+           <p className="mt-2 text-neutral-300 text-lg sm:text-xl leading-relaxed font-medium">
+  A real estate strategist with <span className="text-orange-400 font-semibold">over two decades of experience</span>, 
+  Pradeep Maheshwari has led major projects and broker networks across India driving growth and innovation in the sector.
+</p>
+
 
             {/* Primary CTA (Black + Orange) */}
             <div className="flex items-center gap-4">
