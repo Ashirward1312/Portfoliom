@@ -32,7 +32,7 @@ const DEFAULT_TESTIMONIALS = [
   },
   {
     quote:
-      "Great market intelligence and clear communication. They surfaced a high‑yield opportunity we almost missed.",
+      "Great market intelligence and clear communication. They surfaced a high-yield opportunity we almost missed.",
     name: "Aarav Mehta",
     role: "Partner",
     avatar:
@@ -50,12 +50,13 @@ const DEFAULT_TESTIMONIALS = [
 
 export default function TestimonialsBlue({ items = DEFAULT_TESTIMONIALS }) {
   return (
-    <main className="min-h-screen bg-[#F6F9FF]"id="testimonials">
-      <section className="py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <main className=" bg-[#F6F9FF]" id="testimonials">
+      <section className="relative py-16 lg:py-24">
+        {/* Fixed 1200px container */}
+        <div className="mx-auto max-w-[1200px] mx-auto">
           {/* Header */}
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-widest text-blue-600">
+            <p className="text-xm font-semibold uppercase tracking-widest text-blue-600">
               Our Testimonials
             </p>
             <h1 className="mt-3 text-3xl font-extrabold leading-tight text-slate-900 sm:text-5xl">
@@ -71,7 +72,6 @@ export default function TestimonialsBlue({ items = DEFAULT_TESTIMONIALS }) {
                 key={idx}
                 className="relative rounded-3xl border border-slate-200 bg-white p-8 shadow-sm ring-1 ring-slate-100 transition hover:shadow-md"
               >
-                {/* Blue stars */}
                 <div className="flex items-center gap-1 text-blue-500">
                   {[...Array(5)].map((_, i) => (
                     <StarIcon key={i} className="h-5 w-5" />
@@ -96,21 +96,20 @@ export default function TestimonialsBlue({ items = DEFAULT_TESTIMONIALS }) {
                   </div>
                 </footer>
 
-                {/* soft quote mark */}
                 <QuoteIcon className="pointer-events-none absolute bottom-6 right-6 h-10 w-10 text-blue-200/60" />
               </article>
             ))}
           </div>
-
-          {/* subtle corner gradient for section vibe */}
-          <div
-            className="pointer-events-none absolute inset-x-0 -z-10 top-0 h-64"
-            style={{
-              background:
-                "radial-gradient(60% 60% at 50% 0%, rgba(59,130,246,0.12) 0%, rgba(59,130,246,0) 70%)",
-            }}
-          />
         </div>
+
+        {/* subtle corner gradient (anchored to section) */}
+        <div
+          className="pointer-events-none absolute inset-x-0 -z-10 top-0 h-64"
+          style={{
+            background:
+              "radial-gradient(60% 60% at 50% 0%, rgba(59,130,246,0.12) 0%, rgba(59,130,246,0) 70%)",
+          }}
+        />
       </section>
     </main>
   );

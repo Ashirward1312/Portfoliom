@@ -7,7 +7,7 @@ export default function Header() {
 
   const nav = [
     { label: "Home", href: "#top" },
-    { label: "Experties", href: "#experties" },
+    { label: "Experties", href: "#expertise" },
     // { label: "About", href: "#about" },
     // Contact CTA alag se button me rahega
     { label: "Testimonials", href: "#testimonials" },

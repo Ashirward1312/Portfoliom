@@ -75,7 +75,7 @@ export default function PropertyHero() {
               </div>
               <div className="rounded-xl border border-blue-100 bg-white p-4 text-center shadow-sm">
                 <Award className="h-6 w-6 text-blue-600 mx-auto mb-2" />
-                <p className="text-xl font-semibold text-gray-900">15+ yrs</p>
+                <p className="text-xl font-semibold text-gray-900">20+ yrs</p>
                 <p className="text-xs text-gray-600">Experience</p>
               </div>
               <div className="rounded-xl border border-blue-100 bg-white p-4 text-center shadow-sm">

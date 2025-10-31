@@ -28,19 +28,15 @@ export default function ContactWithUs() {
   async function handleSubmit(e) {
     e.preventDefault();
     setStatus("loading");
-
-    // TODO: Replace with your real endpoint (Formspree/Backend)
-    // await fetch("https://formspree.io/f/xxxxxx", { method: "POST", body: new FormData(e.currentTarget) })
-    //   .then(() => setStatus("success"))
-    //   .catch(() => setStatus("error"));
-
+    // TODO: Replace with your real endpoint
     setTimeout(() => setStatus("success"), 900); // demo
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-blue-50/40 to-white"id="contact">
+    <main className=" bg-gradient-to-b from-blue-50/40 to-white" id="contact">
       <section className="py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Fixed 1200px container */}
+        <div className="w-full max-w-[1200px] mx-auto">
           {/* Header */}
           <div className="mx-auto max-w-3xl text-center">
             <span className="inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xm font-semibold text-blue-700">
@@ -220,6 +216,15 @@ export default function ContactWithUs() {
             </div>
           </div>
         </div>
+
+        {/* subtle gradient aura */}
+        <div
+          className="pointer-events-none absolute inset-x-0 -z-10 top-0 h-64"
+          style={{
+            background:
+              "radial-gradient(60% 60% at 50% 0%, rgba(59,130,246,0.12) 0%, rgba(59,130,246,0) 70%)",
+          }}
+        />
       </section>
     </main>
   );

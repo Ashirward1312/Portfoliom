@@ -1,155 +1,114 @@
-// import React from "react";
+import React from "react";
+import { CheckCircle2, Building2, Network, Lightbulb } from "lucide-react";
+import img from "../../Images/b.jpeg";
 
-// const CheckIcon = (props) => (
-//   <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-//     <path
-//       fill="currentColor"
-//       d="M9.55 16.45a1 1 0 0 1-1.42 0l-3.3-3.3a1 1 0 1 1 1.42-1.42l2.59 2.58 8.01-8a1 1 0 1 1 1.42 1.41l-8.72 8.73z"
-//     />
-//   </svg>
-// );
+export default function LeaderProfile() {
+  const bullets = [
+    "Strategic planning for builders and large‑scale projects",
+    "Broker network development across Chhattisgarh and pan‑India",
+    "Leadership in innovative real estate models",
+    "20+ years in strategy, sales, and marketing",
+  ];
 
-// const TrophyIcon = (props) => (
-//   <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-//     <path
-//       fill="currentColor"
-//       d="M18 3h-2a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1H6a1 1 0 0 0-1 1v2a5 5 0 0 0 4 4.9V12a3 3 0 0 1-3 3H5a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2h-1a3 3 0 0 1-3-3v-1.1A5 5 0 0 0 19 6V4a1 1 0 0 0-1-1Zm-1 3a3 3 0 0 1-2.2 2.9A1 1 0 0 0 14 9v3a1 1 0 0 0 1 1h.06A5.01 5.01 0 0 0 17 9.83V6h0ZM7 6v3.83A5.01 5.01 0 0 0 8.94 13H9a1 1 0 0 0 1-1V9a1 1 0 0 0-.8-.98A3 3 0 0 1 7 6Z"
-//     />
-//   </svg>
-// );
+  return (
+    <section
+      id="leader"
+      className="relative py-16 lg:py-24 bg-gradient-to-b from-slate-50 via-white to-blue-50/20"
+    >
+      {/* container fixed 1200 */}
+      <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6">
+        <div className="grid items-center gap-10 lg:grid-cols-12">
+          {/* LEFT: Photo (smaller width, full image, face/top focus) */}
+          <div className="lg:col-span-5 xl:col-span-4">
+            <div className="relative mx-auto max-w-[420px] md:max-w-[460px] lg:max-w-[420px] rounded-3xl bg-white ring-1 ring-slate-200 shadow-[0_18px_60px_-20px_rgba(2,6,23,0.2)] p-2 md:p-3">
+              <img
+                src={img}
+                alt="Pradeep Maheshwari"
+                className="
+                  w-full aspect-[4/5]
+                  object-contain object-[50%_15%]
+                  rounded-2xl
+                  bg-gradient-to-br from-slate-50 to-blue-50
+                "
+              />
+            </div>
 
-// const ArrowRight = (props) => (
-//   <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-//     <path
-//       fill="currentColor"
-//       d="M13.172 5.172a4 4 0 0 1 5.656 5.656l-6.364 6.364a4 4 0 1 1-5.656-5.656l.707.707a3 3 0 1 0 4.242 4.242l6.364-6.364a3 3 0 0 0-4.242-4.242l-.707.707-1.414-1.414.414-.414Z"
-//     />
-//   </svg>
-// );
+            {/* info chip below image (not overlapping face) */}
+            <div className="mt-3 inline-flex items-center gap-3 rounded-2xl bg-white px-4 py-2 ring-1 ring-slate-200">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
+                <Building2 className="h-5 w-5" />
+              </span>
+              <p className="text-sm font-medium text-slate-800">
+                Executive Vice President, CAIT Chhattisgarh
+              </p>
+            </div>
+          </div>
 
-// function App() {
-//   return (
-//     <main className="min-h-screen"id="about">
-//       <section className="relative py-16 lg:py-24">
-//         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-//           <div className="grid items-center gap-12 lg:grid-cols-2">
-//             {/* LEFT: Image + decorative shapes */}
-//             <div className="relative">
-//               {/* Slightly smaller image card */}
-//               <div className="mx-auto max-w-[520px] md:max-w-[560px] lg:max-w-[520px] rounded-[40px] bg-white/70 backdrop-blur-sm shadow-[0_20px_60px_-15px_rgba(2,6,23,0.25)] ring-1 ring-black/5 p-3">
-//                 <img
-//                   src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
-//                   alt="Team discussing documents"
-//                   className="aspect-[4/3] w-full rounded-[32px] object-cover"
-//                 />
-//               </div>
+          {/* RIGHT: Content */}
+          <div className="lg:col-span-7">
+            <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1 text-xm font-semibold text-blue-700 ring-1 ring-blue-100">
+              Leadership Profile
+            </span>
 
-//               {/* Dotted decoration */}
-//               <div
-//                 className="pointer-events-none absolute -left-8 -bottom-10 h-40 w-40 opacity-60"
-//                 style={{
-//                   backgroundImage:
-//                     "radial-gradient(currentColor 1.5px, transparent 1.5px)",
-//                   backgroundSize: "14px 14px",
-//                   color: "#c7d2fe",
-//                 }}
-//               />
+            <h1 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+              Pradeep Maheshwari
+            </h1>
 
-//               {/* Wavy lines decoration */}
-//               <svg
-//                 className="pointer-events-none absolute -right-6 -bottom-6 w-48 text-indigo-500/70"
-//                 viewBox="0 0 200 50"
-//                 fill="none"
-//                 xmlns="http://www.w3.org/2000/svg"
-//               >
-//                 <path
-//                   d="M0 30c20-20 40 20 60 0s40 20 60 0 40 20 60 0"
-//                   stroke="currentColor"
-//                   strokeWidth="6"
-//                   strokeLinecap="round"
-//                 />
-//               </svg>
-//             </div>
+            <p className="mt-1 text-slate-600">
+              Strategic Leader • Real Estate Visionary • Executive Vice President, CAIT Chhattisgarh
+            </p>
 
-//             {/* RIGHT: Content */}
-//             <div>
-//               <p className="mb-3 inline-flex items-center gap-2 text-xm font-semibold tracking-widest text-blue-600">
-//                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-600" />
-//                 ABOUT 
-//               </p>
+            <p className="mt-5 text-[15.5px] leading-relaxed text-slate-700">
+              With over two decades of experience in real estate strategy, sales, and marketing,
+              Pradeep Maheshwari stands as one of Chhattisgarh’s most respected and forward‑thinking
+              professionals in the sector. His career spans strategic planning for builders and
+              large‑scale projects, development of broker networks across Chhattisgarh and pan‑India,
+              and leadership in innovative real estate models.
+            </p>
 
-//               <h1 className="text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-5xl">
-//                 One Of The Fastest Way To Gain Business Success
-//               </h1>
+            {/* Highlights */}
+            <ul className="mt-6 grid gap-3">
+              {bullets.map((b) => (
+                <li key={b} className="flex items-start gap-3">
+                  <span className="mt-0.5 inline-flex h-7 w-7 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 ring-1 ring-emerald-100">
+                    <CheckCircle2 className="h-4 w-4" />
+                  </span>
+                  <span className="text-slate-700">{b}</span>
+                </li>
+              ))}
+            </ul>
 
-//               <p className="mt-5 max-w-2xl text-slate-600">
-//                 Things go wrong, have questions. We understand how people work.
-//                 Viverrra purus sed aliquet tincidunt, nibh eget entum lobortis
-//                 ante. Our team blends strategy, design, and engineering to ship
-//                 outcomes that move your metrics.
-//               </p>
+            {/* Badges */}
+            <div className="mt-6 flex flex-wrap gap-3">
+              <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 ring-1 ring-indigo-100">
+                <Network className="h-4 w-4" /> Pan‑India Network
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700 ring-1 ring-amber-100">
+                <Lightbulb className="h-4 w-4" /> Innovative Models
+              </span>
+            </div>
 
-//               {/* Stat card + bullets */}
-//               <div className="mt-8 flex flex-col gap-6">
-//                 <div className="flex items-center gap-4">
-//                   <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-//                     <div className="flex items-center gap-4">
-//                       <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
-//                         <TrophyIcon className="h-7 w-7" />
-//                       </div>
-//                       <div>
-//                         <div className="text-2xl font-extrabold text-slate-900">
-//                           10M
-//                         </div>
-//                         <div className="text-sm font-medium text-slate-500">
-//                           Satisfied Clients
-//                         </div>
-//                       </div>
-//                     </div>
-//                   </div>
-//                 </div>
+            {/* CTA */}
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/30 ring-1 ring-blue-400/20 transition-all hover:from-blue-700 hover:to-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-//                 <ul className="grid gap-4 sm:grid-cols-2">
-//                   {[
-//                     "100% Better results",
-//                     "Faster delivery & iteration",
-//                   ].map((item) => (
-//                     <li key={item} className="flex items-start gap-3">
-//                       <span className="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-indigo-600">
-//                         <CheckIcon className="h-4 w-4" />
-//                       </span>
-//                       <span className="text-slate-700">{item}</span>
-//                     </li>
-//                   ))}
-//                 </ul>
-
-//                 <div className="pt-2">
-//                   <a
-//                     href="#contact"
-//                     className="group inline-flex items-center gap-3 rounded-full bg-blue-600 px-6 py-3 font-semibold text-white shadow-lg shadow-blue-600/30 transition-all duration-200 hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-//                   >
-//                     Contact With Us
-//                     <span className="grid h-7 w-7 place-items-center rounded-full bg-white/15 transition-all group-hover:translate-x-0.5">
-//                       <ArrowRight className="h-4 w-4" />
-//                     </span>
-//                   </a>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* subtle gradient aura */}
-//           <div
-//             className="pointer-events-none absolute inset-x-0 -z-10 top-0 h-64"
-//             style={{
-//               background:
-//                 "radial-gradient(60% 60% at 50% 0%, rgba(59,130,246,0.12) 0%, rgba(59,130,246,0) 70%)",
-//             }}
-//           />
-//         </div>
-//       </section>
-//     </main>
-//   );
-// }
-
-// export default App;
+      {/* subtle top aura */}
+      <div
+        className="pointer-events-none absolute inset-x-0 -z-10 top-0 h-64"
+        style={{
+          background:
+            "radial-gradient(60% 60% at 50% 0%, rgba(59,130,246,0.12) 0%, rgba(59,130,246,0) 70%)",
+        }}
+      />
+    </section>
+  );
+}

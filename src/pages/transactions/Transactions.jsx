@@ -5,37 +5,64 @@ import {
   KeyRound,
   Handshake,
   ShieldCheck,
+  MapPin,
+  BadgeCheck,
+  CalendarCheck,
+  Headset,
 } from "lucide-react";
 
 export default function WhyChooseUs() {
-  const bullets = [
-    "Proven track record of high-value transactions",
-    "Access to exclusive listings and investment opportunities",
-    "Strong market intelligence and negotiation expertise",
-    "Commitment to ethical and transparent brokerage practices",
-  ];
+  const bullets = [];
 
-  // Relatable icons for each feature
+  // 8 relatable features with mixed accent colors
   const features = [
     {
       title: "Proven Results",
       desc: "High‑value transactions and on‑time closes backed by process and discipline.",
-      Icon: TrendingUp, // performance/result graph
+      Icon: TrendingUp,
+      badgeClass: "bg-indigo-50 text-indigo-600 ring-1 ring-indigo-100",
     },
     {
       title: "Exclusive Access",
       desc: "Off‑market listings and vetted investment opportunities you won’t find publicly.",
-      Icon: KeyRound, // key = access
+      Icon: KeyRound,
+      badgeClass: "bg-indigo-50 text-indigo-600 ring-1 ring-indigo-100",
     },
     {
       title: "Market Intel + Negotiation",
       desc: "Data‑driven underwriting and strong advocacy to protect your position.",
-      Icon: Handshake, // negotiation/agreements
+      Icon: Handshake,
+      badgeClass: "bg-indigo-50 text-indigo-600 ring-1 ring-indigo-100",
     },
     {
       title: "Ethics & Transparency",
       desc: "Clear fees, risk disclosure, and documentation at every step—no surprises.",
-      Icon: ShieldCheck, // trust/compliance
+      Icon: ShieldCheck,
+      badgeClass: "bg-indigo-50 text-indigo-600 ring-1 ring-indigo-100",
+    },
+    {
+      title: "Local Expertise",
+      desc: "Deep knowledge of micro‑markets to uncover neighborhood‑level value.",
+      Icon: MapPin,
+      badgeClass: "bg-amber-50 text-amber-600 ring-1 ring-amber-100",
+    },
+    {
+      title: "Verified Listings",
+      desc: "Diligence, title checks, and documentation to ensure clean transactions.",
+      Icon: BadgeCheck,
+      badgeClass: "bg-amber-50 text-amber-600 ring-1 ring-amber-100",
+    },
+    {
+      title: "Faster Closings",
+      desc: "Streamlined coordination with lenders, legal, and notary to close on time.",
+      Icon: CalendarCheck,
+      badgeClass: "bg-amber-50 text-amber-600 ring-1 ring-amber-100",
+    },
+    {
+      title: "End‑to‑End Support",
+      desc: "From discovery to possession — we stay with you throughout the journey.",
+      Icon: Headset,
+      badgeClass: "bg-amber-50 text-amber-600 ring-1 ring-amber-100",
     },
   ];
 
@@ -57,8 +84,26 @@ export default function WhyChooseUs() {
     }
   };
 
+  // Split into two columns with 4 items each
+  const colLeft = features.slice(0, 4);
+  const colRight = features.slice(4, 8);
+
+  const Card = ({ Icon, title, desc, badgeClass }) => (
+    <article className="rounded-2xl bg-white/95 p-5 ring-1 ring-slate-200/80 shadow-sm transition hover:bg-slate-50/70 hover:ring-slate-300">
+      <div className="flex items-start gap-4">
+        <span className={`shrink-0 grid h-12 w-12 place-items-center rounded-xl ${badgeClass}`}>
+          <Icon className="h-6 w-6" />
+        </span>
+        <div>
+          <h3 className="text-base sm:text-lg font-semibold text-slate-900">{title}</h3>
+          <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{desc}</p>
+        </div>
+      </div>
+    </article>
+  );
+
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <main className="bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
       <section className="relative py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {/* Header */}
@@ -70,41 +115,21 @@ export default function WhyChooseUs() {
             <h1 className="mt-4 text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900">
               We align every deal with your investment goals
             </h1>
-            <p className="mt-3 text-slate-600">
-              {/* Our clients trust us to deliver results—whether it’s identifying high‑yield assets or structuring complex transactions, we ensure every deal adds measurable value. */}
-            </p>
           </div>
 
-          {/* Bullets */}
-          <ul className="mx-auto mt-8 grid max-w-4xl gap-4 sm:grid-cols-2">
-            {bullets.map((item) => (
-              <li
-                key={item}
-                className="flex items-start gap-3 rounded-2xl bg-white/80 p-4 ring-1 ring-slate-200 transition hover:ring-blue-200"
-              >
-                <span className="mt-0.5 inline-flex h-7 w-7 items-center justify-center rounded-full bg-blue-100 text-blue-700">
-                  <CheckCircle2 className="h-4 w-4" />
-                </span>
-                <span className="text-slate-700">{item}</span>
-              </li>
-            ))}
-          </ul>
+          {/* Feature cards — 2 columns, each with 4 items (icon left, content right) */}
+          <div className="mt-12 grid gap-8 lg:grid-cols-2">
+            <div className="space-y-6">
+              {colLeft.map(({ title, desc, Icon, badgeClass }) => (
+                <Card key={title} Icon={Icon} title={title} desc={desc} badgeClass={badgeClass} />
+              ))}
+            </div>
 
-          {/* Feature cards */}
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {features.map(({ title, desc, Icon }) => (
-              <article
-                key={title}
-                className="group rounded-3xl bg-gradient-to-b from-white to-blue-50/30 p-6 ring-1 ring-slate-200/70 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md hover:ring-blue-200"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <h3 className="mt-4 text-lg font-semibold text-slate-900">{title}</h3>
-                <p className="mt-2 text-sm text-slate-600">{desc}</p>
-                <span className="mt-4 block h-1 w-10 rounded-full bg-gradient-to-r from-blue-600 to-sky-400 opacity-70" />
-              </article>
-            ))}
+            <div className="space-y-6 lg:border-l lg:border-slate-200/70 lg:pl-8">
+              {colRight.map(({ title, desc, Icon, badgeClass }) => (
+                <Card key={title} Icon={Icon} title={title} desc={desc} badgeClass={badgeClass} />
+              ))}
+            </div>
           </div>
 
           {/* Stats strip */}
