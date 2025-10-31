@@ -4,17 +4,36 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Pin = (props) => (
   <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-    <path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 10.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z" />
+    <path
+      fill="currentColor"
+      d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 10.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"
+    />
   </svg>
 );
+
 const Phone = (props) => (
   <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-    <path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C11.85 21 3 12.15 3 2a1 1 0 0 1 1-1h3.49a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.2 2.2Z" />
+    <path
+      fill="currentColor"
+      d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C11.85 21 3 12.15 3 2a1 1 0 0 1 1-1h3.49a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.2 2.2Z"
+    />
   </svg>
 );
+
+/* FIXED: crisp stroke-based Mail icon (no distortion at small sizes) */
 const Mail = (props) => (
-  <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-    <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z" />
+  <svg
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <rect x="3" y="5" width="18" height="14" rx="2" ry="2" />
+    <path d="M3 7l9 6 9-6" />
   </svg>
 );
 
@@ -57,7 +76,9 @@ export default function FooterPM({
               <span className="text-orange-400">Maheshwari</span>
             </h3>
             <p className="mt-4 max-w-md leading-relaxed">
-              {brand} — Your trusted real estate partner in Raipur — helping you discover modern properties, premium offices, and verified homes with transparency and ease.
+              {brand} — Your trusted real estate partner in Raipur — helping you
+              discover modern properties, premium offices, and verified homes with
+              transparency and ease.
             </p>
           </div>
 
@@ -73,7 +94,10 @@ export default function FooterPM({
                 { label: "Achievements", href: "#achievements" },
               ].map((l) => (
                 <li key={l.label}>
-                  <a className="hover:text-orange-300 transition-colors" href={l.href}>
+                  <a
+                    className="hover:text-orange-300 transition-colors"
+                    href={l.href}
+                  >
                     {l.label}
                   </a>
                 </li>
@@ -91,19 +115,27 @@ export default function FooterPM({
                 </span>
                 <span>{address}</span>
               </li>
+
               <li className="flex items-start gap-3">
                 <span className="grid h-9 w-9 place-items-center rounded-lg bg-orange-500/10 text-orange-300 ring-1 ring-orange-400/20">
                   <Phone className="h-5 w-5" />
                 </span>
-                <a href={`tel:${phone.replace(/\s+/g, "")}`} className="hover:text-orange-300">
+                <a
+                  href={`tel:${phone.replace(/\s+/g, "")}`}
+                  className="hover:text-orange-300"
+                >
                   {phone}
                 </a>
               </li>
+
               <li className="flex items-start gap-3">
                 <span className="grid h-9 w-9 place-items-center rounded-lg bg-orange-500/10 text-orange-300 ring-1 ring-orange-400/20">
                   <Mail className="h-5 w-5" />
                 </span>
-                <a href={`mailto:${email}`} className="hover:text-orange-300">
+                <a
+                  href={`mailto:${email}`}
+                  className="hover:text-orange-300 break-all"
+                >
                   {email}
                 </a>
               </li>

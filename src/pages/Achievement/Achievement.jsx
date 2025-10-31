@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Achievements() {
   const imageUrl =
-    "https://images.pexels.com/photos/8518660/pexels-photo-8518660.jpeg"; // keep same image
+    "https://images.pexels.com/photos/8518660/pexels-photo-8518660.jpeg"; // same image
 
   const details = [
     "20+ Years of Expertise in strategy building, project management, and real estate marketing.",
@@ -16,26 +16,28 @@ export default function Achievements() {
   ];
 
   return (
-    <main id="achievements" className="bg-neutral-950 text-neutral-100 py-20 px-6">
+    <main
+      id="achievements"
+      className="bg-neutral-950 text-neutral-100 py-20 px-6 relative"
+    >
       <section className="w-full max-w-[1200px] mx-auto">
-        {/* Single heading */}
-        <div className="text-center">
-          <h2 className="text-4xl md:text-3xl font-bold mb-5 inline-block">
-            <span className="bg-gradient-to-r from-orange-400 via-amber-300 to-orange-200 bg-clip-text text-transparent">
-              Key Achievements & Leadership Roles
-            </span>
-          </h2>
-        </div>
-
-        {/* Grid: Left details, Right image */}
+        {/* Grid: Left content + Right image */}
         <div className="grid gap-10 lg:grid-cols-12 items-stretch">
-          {/* Left - All Details (dark + orange) */}
+          {/* Left: Heading + Content in one box */}
           <div className="lg:col-span-8 self-stretch">
             <div className="bg-black/50 rounded-2xl shadow-sm ring-1 ring-white/10 p-8 sm:p-10 backdrop-blur space-y-6">
+              {/* Heading inside same box */}
+              <h2 className="text-4xl md:text-3xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-orange-400 via-amber-300 to-orange-200 bg-clip-text text-transparent">
+                  Key Achievements & Leadership Roles
+                </span>
+              </h2>
+
+              {/* All Achievements */}
               {details.map((line, index) => (
                 <p
                   key={index}
-                  className="text-neutral-200 text-base sm:text-lg leading-relaxed border-l-4 border-orange-500 pl-4 rounded-md transition-all duration-300 hover:bg-white/5"
+                  className="text-neutral-200 text-sm sm:text-base leading-relaxed border-l-4 border-orange-500 pl-4 rounded-md transition-all duration-300 hover:bg-white/5"
                 >
                   {line}
                 </p>
@@ -43,7 +45,7 @@ export default function Achievements() {
             </div>
           </div>
 
-          {/* Right - Image (same design, dark surface) */}
+          {/* Right - Image (unchanged) */}
           <div className="lg:col-span-4 self-stretch">
             <div className="relative h-full rounded-2xl overflow-hidden shadow-xl bg-black/50 ring-1 ring-white/10 group">
               <img
@@ -51,14 +53,13 @@ export default function Achievements() {
                 alt="Achievements"
                 className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
               />
-              {/* Soft overlay */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-40 group-hover:opacity-60 transition-opacity"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* subtle orange aura */}
+      {/* Soft orange aura */}
       <div
         className="pointer-events-none absolute inset-x-0 -z-10 top-0 h-64"
         style={{
