@@ -11,12 +11,10 @@ export default function Header() {
     { label: "Testimonials", href: "#testimonials" },
   ];
 
-  // Get current sticky header height
   const getOffset = useCallback(() => {
-    return (headerRef.current?.offsetHeight ?? 80) + 6; // +6px breathing space
+    return (headerRef.current?.offsetHeight ?? 80) + 6;
   }, []);
 
-  // Core smooth-scroll with easing + highlight
   const smoothScrollTo = useCallback(
     (hash) => {
       const id = (hash || "").replace("#", "");
@@ -30,7 +28,7 @@ export default function Header() {
       const targetY =
         el.getBoundingClientRect().top + window.pageYOffset - getOffset();
 
-      const duration = 550; // ms
+      const duration = 550;
       const startTime = performance.now();
 
       const ease = (t) =>
@@ -43,7 +41,6 @@ export default function Header() {
         window.scrollTo(0, y);
         if (t < 1) requestAnimationFrame(step);
         else {
-          // brief highlight
           el.classList.add(
             "ring-2",
             "ring-orange-500",
@@ -93,7 +90,7 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className="w-full sticky top-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-white/10"
+      className="w-full sticky top-0 z-50 bg-neutral-950 border-b border-white/10 shadow-lg"
     >
       <div className="max-w-[1200px] mx-auto h-16 md:h-20 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand */}
@@ -115,7 +112,7 @@ export default function Header() {
           </span>
         </a>
 
-        {/* Desktop navigation + CTA */}
+        {/* Desktop navigation */}
         <div className="hidden md:flex items-center gap-7">
           <nav className="flex items-center gap-7">
             {nav.map((item) => (
@@ -142,7 +139,7 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile menu button */}
+        {/* Mobile menu toggle */}
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
@@ -154,9 +151,9 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile menu + CTA */}
+      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-white/10 bg-neutral-950/95">
+        <div className="md:hidden border-t border-white/10 bg-neutral-950">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-3">
             {nav.map((item) => (
               <a
