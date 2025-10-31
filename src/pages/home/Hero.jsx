@@ -19,7 +19,7 @@ export default function PropertyHero() {
   };
 
   return (
-    <div className="w-full flex items-center justify-center bg-white relative overflow-hidden">
+    <div className="w-full flex items-center justify-center bg-white relative overflow-hidden"id='home'>
       {/* Soft blue accents (kept) */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-blue-100 blur-3xl" />
@@ -27,7 +27,8 @@ export default function PropertyHero() {
       </div>
 
       {/* Main container - reduced top spacing */}
-      <section className="w-full max-w-[1200px] pt-16 md:pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+      {/* Main container - slightly reduced top spacing */}
+      <section className="w-full max-w-[1200px] pt-12 md:pt-14 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left content */}
           <div className="lg:col-span-7 space-y-6">

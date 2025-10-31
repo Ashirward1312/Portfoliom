@@ -6,7 +6,7 @@ export default function Header() {
   const headerRef = useRef(null);
 
   const nav = [
-    { label: "Home", href: "#top" },
+    { label: "Home", href: "#home" },
     { label: "Experties", href: "#expertise" },
     // { label: "About", href: "#about" },
     // Contact CTA alag se button me rahega

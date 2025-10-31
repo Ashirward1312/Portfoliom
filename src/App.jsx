@@ -15,10 +15,11 @@ function App() {
     <div>
       <Header />
       <Hero />
-      <Expert />
       <About />
 
       <Achievements />
+      <Expert />
+
       <Transactions />
       <Testimonials />
       <Contact />

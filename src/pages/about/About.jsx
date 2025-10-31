@@ -1,6 +1,6 @@
 import React from "react";
 import { CheckCircle2, Building2, Network, Lightbulb } from "lucide-react";
-import img from "../../Images/b.jpeg";
+import img from "../../Images/c.jpeg";
 
 export default function LeaderProfile() {
   const bullets = [
@@ -20,28 +20,20 @@ export default function LeaderProfile() {
         <div className="grid items-center gap-10 lg:grid-cols-12">
           {/* LEFT: Photo (smaller width, full image, face/top focus) */}
           <div className="lg:col-span-5 xl:col-span-4">
-            <div className="relative mx-auto max-w-[420px] md:max-w-[460px] lg:max-w-[420px] rounded-3xl bg-white ring-1 ring-slate-200 shadow-[0_18px_60px_-20px_rgba(2,6,23,0.2)] p-2 md:p-3">
+            <div className="relative mx-auto max-w-[420px] md:max-w-[460px] lg:max-w-[420px] ">
               <img
                 src={img}
                 alt="Pradeep Maheshwari"
                 className="
                   w-full aspect-[4/5]
                   object-contain object-[50%_15%]
-                  rounded-2xl
-                  bg-gradient-to-br from-slate-50 to-blue-50
+                  
                 "
               />
             </div>
 
             {/* info chip below image (not overlapping face) */}
-            <div className="mt-3 inline-flex items-center gap-3 rounded-2xl bg-white px-4 py-2 ring-1 ring-slate-200">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
-                <Building2 className="h-5 w-5" />
-              </span>
-              <p className="text-sm font-medium text-slate-800">
-                Executive Vice President, CAIT Chhattisgarh
-              </p>
-            </div>
+           
           </div>
 
           {/* RIGHT: Content */}
@@ -54,9 +46,10 @@ export default function LeaderProfile() {
               Pradeep Maheshwari
             </h1>
 
-            <p className="mt-1 text-slate-600">
-              Strategic Leader • Real Estate Visionary • Executive Vice President, CAIT Chhattisgarh
-            </p>
+          <p className="mt-1 text-black font-bold">
+  Strategic Leader • Real Estate Visionary • Executive Vice President, CAIT Chhattisgarh
+</p>
+
 
             <p className="mt-5 text-[15.5px] leading-relaxed text-slate-700">
               With over two decades of experience in real estate strategy, sales, and marketing,
@@ -89,14 +82,14 @@ export default function LeaderProfile() {
             </div>
 
             {/* CTA */}
-            <div className="mt-8 flex flex-wrap gap-4">
+            {/* <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href="#contact"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/30 ring-1 ring-blue-400/20 transition-all hover:from-blue-700 hover:to-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
               >
                 Contact
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

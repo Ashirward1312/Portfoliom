@@ -108,12 +108,12 @@ export default function WhyChooseUs() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {/* Header */}
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-[13px] font-semibold uppercase tracking-wider text-blue-700 ring-1 ring-blue-100">
+            <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-[16px] font-semibold uppercase tracking-wider text-blue-700 ring-1 ring-blue-100">
               <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
               Why Choose Us
             </span>
             <h1 className="mt-4 text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900">
-              We align every deal with your investment goals
+              {/* We align every deal with your investment goals */}
             </h1>
           </div>
 
