@@ -42,7 +42,7 @@ const OurExpertise = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-5">
             Our{" "}
             <span className="bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent">
-              Expertise
+              Services
             </span>
           </h2>
           <p className="text-neutral-300 max-w-2xl mx-auto text-lg">

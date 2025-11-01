@@ -8,6 +8,7 @@ import Testimonials from './pages/Testomonials/Testomonials.jsx'
 import Contact from './pages/Contact/Contact.jsx'
 import Footer from './pages/Footer/Footer.jsx'
 import Achievements from './pages/Achievement/Achievement.jsx'
+import Ex from './pages/Expert/Ex.jsx'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
 
       <Achievements />
       <Expert />
+      <Ex />
 
       <Transactions />
       <Testimonials />
