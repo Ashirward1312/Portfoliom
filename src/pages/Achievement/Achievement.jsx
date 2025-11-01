@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Achievements() {
   const imageUrl =
-    "https://images.pexels.com/photos/8518660/pexels-photo-8518660.jpeg"; // same image
+    "https://images.pexels.com/photos/8518660/pexels-photo-8518660.jpeg?auto=compress&cs=tinysrgb&w=800"; // compressed
 
   const details = [
     "20+ Years of Expertise in strategy building, project management, and real estate marketing.",
@@ -18,22 +18,20 @@ export default function Achievements() {
   return (
     <main
       id="achievements"
-      className="bg-neutral-950 text-neutral-100 py-20 px-6 relative"
+      className="bg-neutral-950 text-neutral-100 py-20 px-6 relative overflow-hidden"
     >
-      <section className="w-full max-w-[1200px] mx-auto">
+      <section className="w-full max-w-[1200px] mx-auto animate-fadeIn">
         {/* Grid: Left content + Right image */}
         <div className="grid gap-10 lg:grid-cols-12 items-stretch">
-          {/* Left: Heading + Content in one box */}
+          {/* Left: Content */}
           <div className="lg:col-span-8 self-stretch">
-            <div className="bg-black/50 rounded-2xl shadow-sm ring-1 ring-white/10 p-8 sm:p-10 backdrop-blur space-y-6">
-              {/* Heading inside same box */}
+            <div className="bg-black/40 rounded-2xl shadow-lg ring-1 ring-white/10 p-8 sm:p-10 space-y-6">
               <h2 className="text-4xl md:text-6xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-orange-400 via-amber-300 to-orange-200 bg-clip-text text-transparent">
                   Key Achievements & Leadership Roles
                 </span>
               </h2>
 
-              {/* All Achievements */}
               {details.map((line, index) => (
                 <p
                   key={index}
@@ -45,15 +43,16 @@ export default function Achievements() {
             </div>
           </div>
 
-          {/* Right - Image (unchanged) */}
+          {/* Right: Image */}
           <div className="lg:col-span-4 self-stretch">
-            <div className="relative h-full rounded-2xl overflow-hidden shadow-xl bg-black/50 ring-1 ring-white/10 group">
+            <div className="relative h-full rounded-2xl overflow-hidden shadow-md bg-black/50 ring-1 ring-white/10 group">
               <img
                 src={imageUrl}
+                loading="lazy"
                 alt="Achievements"
                 className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-40 group-hover:opacity-60 transition-opacity"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40 group-hover:opacity-60 transition-opacity"></div>
             </div>
           </div>
         </div>
@@ -64,7 +63,7 @@ export default function Achievements() {
         className="pointer-events-none absolute inset-x-0 -z-10 top-0 h-64"
         style={{
           background:
-            "radial-gradient(60% 60% at 50% 0%, rgba(249,115,22,0.12) 0%, rgba(0,0,0,0) 70%)",
+            "radial-gradient(60% 60% at 50% 0%, rgba(249,115,22,0.1) 0%, rgba(0,0,0,0) 70%)",
         }}
       />
     </main>

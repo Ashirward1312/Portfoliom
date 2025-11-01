@@ -28,7 +28,7 @@ const DEFAULT_TESTIMONIALS = [
     name: "Mr. Robey Alexa",
     role: "CEO, Xara Agency",
     avatar:
-      "https://images.pexels.com/photos/14983798/pexels-photo-14983798.jpeg",
+      "https://images.pexels.com/photos/14983798/pexels-photo-14983798.jpeg?auto=compress&cs=tinysrgb&w=400",
   },
   {
     quote:
@@ -36,7 +36,7 @@ const DEFAULT_TESTIMONIALS = [
     name: "Aarav Mehta",
     role: "Partner",
     avatar:
-      "https://images.pexels.com/photos/9604304/pexels-photo-9604304.jpeg",
+      "https://images.pexels.com/photos/9604304/pexels-photo-9604304.jpeg?auto=compress&cs=tinysrgb&w=400",
   },
   {
     quote:
@@ -44,14 +44,14 @@ const DEFAULT_TESTIMONIALS = [
     name: "Sara Khan",
     role: "Director",
     avatar:
-      "https://images.pexels.com/photos/1759524/pexels-photo-1759524.jpeg",
+      "https://images.pexels.com/photos/1759524/pexels-photo-1759524.jpeg?auto=compress&cs=tinysrgb&w=400",
   },
 ];
 
 export default function TestimonialsBlue({ items = DEFAULT_TESTIMONIALS }) {
   return (
     <main className="bg-neutral-950 text-neutral-100" id="testimonials">
-      <section className="relative py-16 lg:py-24">
+      <section className="relative py-16 lg:py-24 overflow-hidden">
         {/* Fixed 1200px container */}
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
           {/* Header */}
@@ -70,7 +70,7 @@ export default function TestimonialsBlue({ items = DEFAULT_TESTIMONIALS }) {
             {items.map(({ quote, name, role, avatar }, idx) => (
               <article
                 key={idx}
-                className="relative rounded-3xl border border-white/10 bg-black/50 p-8 shadow-lg shadow-black/30 ring-1 ring-white/10 backdrop-blur transition hover:border-orange-400/30 hover:ring-orange-400/20 hover:shadow-black/40"
+                className="relative rounded-3xl border border-white/10 bg-black/40 p-8 shadow-lg shadow-black/20 ring-1 ring-white/10 transition hover:border-orange-400/30 hover:ring-orange-400/20 hover:shadow-black/30"
               >
                 <div className="flex items-center gap-1 text-orange-400">
                   {[...Array(5)].map((_, i) => (
@@ -85,7 +85,8 @@ export default function TestimonialsBlue({ items = DEFAULT_TESTIMONIALS }) {
                 <footer className="mt-6 flex items-center gap-4">
                   <img
                     src={avatar}
-                    alt=""
+                    loading="lazy"
+                    alt={name}
                     className="h-14 w-14 rounded-full object-cover ring-1 ring-white/10"
                   />
                   <div>
