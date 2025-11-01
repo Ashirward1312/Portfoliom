@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { FaArrowUp } from "react-icons/fa";
 
 const Pin = (props) => (
   <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -20,7 +21,6 @@ const Phone = (props) => (
   </svg>
 );
 
-/* FIXED: crisp stroke-based Mail icon (no distortion at small sizes) */
 const Mail = (props) => (
   <svg
     viewBox="0 0 24 24"
@@ -63,11 +63,23 @@ export default function FooterPM({
   },
 }) {
   const year = new Date().getFullYear();
+  const [showTop, setShowTop] = useState(false);
+
+  // Show scroll button after 200px
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 200);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
-    <footer className="-mt-8 md:-mt-12 bg-neutral-950 text-neutral-300 border-t border-white/10">
+    <footer className="-mt-8 md:-mt-12 bg-neutral-950 text-neutral-300 border-t border-white/10 relative">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
-        {/* Top */}
+        {/* Top Section */}
         <div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
@@ -128,13 +140,14 @@ export default function FooterPM({
                 </a>
               </li>
 
-              <li className="flex items-start gap-3">
-                <span className="grid h-9 w-9 place-items-center rounded-lg bg-orange-500/10 text-orange-300 ring-1 ring-orange-400/20">
+              {/* FIXED EMAIL LINE */}
+              <li className="flex items-start gap-3 flex-wrap sm:flex-nowrap">
+                <span className="grid h-9 w-9 place-items-center rounded-lg bg-orange-500/10 text-orange-300 ring-1 ring-orange-400/20 flex-shrink-0">
                   <Mail className="h-5 w-5" />
                 </span>
                 <a
                   href={`mailto:${email}`}
-                  className="hover:text-orange-300 break-all"
+                  className="hover:text-orange-300 whitespace-nowrap"
                 >
                   {email}
                 </a>
@@ -162,11 +175,23 @@ export default function FooterPM({
           </div>
         </div>
 
-        {/* Bottom bar */}
+        {/* Bottom Bar */}
         <div className="border-t border-white/10 py-6 text-center text-sm text-neutral-400">
-          © {year} {brand}. All rights reserved.
+          Copyright © {year}. All rights reserved, Designed and developed by{" "}
+          <span className="text-orange-400 font-semibold">SP Advertising</span>.
         </div>
       </div>
+
+      {/* Scroll to Top Button */}
+      {showTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 animate-bounce"
+          aria-label="Scroll to top"
+        >
+          <FaArrowUp className="h-5 w-5" />
+        </button>
+      )}
     </footer>
   );
 }
