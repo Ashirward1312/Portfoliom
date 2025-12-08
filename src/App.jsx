@@ -19,8 +19,10 @@ function App() {
       <About />
 
       <Achievements />
-      <Expert />
+
       <Ex />
+      <Expert />
+
 
       <Transactions />
       <Testimonials />
