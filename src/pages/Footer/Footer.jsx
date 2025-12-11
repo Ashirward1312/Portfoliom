@@ -387,7 +387,7 @@ export default function FooterPM({
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 py-6 text-center text-sm text-neutral-400">
-          Copyright © {year}. All rights reserved, Designed and developed by{" "}
+          Copyright © {year}. All rights reserved, Designed and Developed by{" "}
           <a
             href="https://spadvertising.in/"
             target="_blank"
