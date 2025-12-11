@@ -195,6 +195,8 @@
 //     </footer>
 //   );
 // }
+
+
 import React, { useEffect, useState } from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -344,7 +346,9 @@ export default function FooterPM({
                 </a>
               </li>
 
-              {/* <li className="flex items-start gap-3 flex-wrap sm:flex-nowrap">
+              {/* Email commented out by you */}
+              {/*
+              <li className="flex items-start gap-3 flex-wrap sm:flex-nowrap">
                 <span className="grid h-9 w-9 place-items-center rounded-lg bg-black/60 text-neutral-100 ring-1 ring-white/10 flex-shrink-0">
                   <Mail className="h-5 w-5" />
                 </span>
@@ -354,7 +358,8 @@ export default function FooterPM({
                 >
                   {email}
                 </a>
-              </li> */}
+              </li>
+              */}
             </ul>
           </div>
 
@@ -383,9 +388,14 @@ export default function FooterPM({
         {/* Bottom Bar */}
         <div className="border-t border-white/10 py-6 text-center text-sm text-neutral-400">
           Copyright © {year}. All rights reserved, Designed and developed by{" "}
-          <span className="text-neutral-100 font-semibold">
-            SP Advertising
-          </span>
+          <a
+            href="https://spadvertising.in/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-neutral-100 font-semibold hover:text-neutral-50 underline-offset-4 hover:underline"
+          >
+            SP ADVERTISING
+          </a>
           .
         </div>
       </div>
