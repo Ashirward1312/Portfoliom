@@ -133,7 +133,7 @@ export default function LeaderProfile() {
               PRADEEP MAHESHWARI            </h1>
 
             <p className="mt-1 text-neutral-200/90 font-semibold">
-              Strategic Leader • Real Estate Visionary • Executive Vice President, CAIT Chhattisgarh
+              Strategic Leader • Real Estate Visionary • YUVA CAIT Chhattisgarh Executive Vice President.
             </p>
 
             <p className="mt-5 text-[15.5px] leading-relaxed text-neutral-300">
