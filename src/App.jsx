@@ -13,6 +13,7 @@ import Footer from './pages/Footer/Footer.jsx'
 import Achievements from './pages/Achievement/Achievement.jsx'
 import Ex from './pages/Expert/Ex.jsx'
 import Gallery from './pages/Gallery/Gallery.jsx'
+import Whatsapp from './pages/Whatsapp/Whatsapp.jsx'
 
 // Home page ka layout alag component bana diya
 function HomePage() {
@@ -25,7 +26,9 @@ function HomePage() {
       <Expert />
       <Transactions />
       <Testimonials />
+      <Whatsapp />
       <Contact />
+
     </>
   )
 }
