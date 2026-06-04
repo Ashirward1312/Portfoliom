@@ -346,7 +346,7 @@ export default function PropertyHero() {
   <span className="text-neutral-50 font-semibold">
     Founder of India’s first co-working &amp; community{" "}
     <span className="font-extrabold">HEADQUARTERS</span>
-    {" "}in Raipur with IREF and Anjaneya University
+    {" "} and also started central India's first MBA IN REALESTATE PROGRAM with iref and anjaneya university
   </span>
   .
 </p>

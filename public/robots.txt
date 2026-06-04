@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thepradeepmaheshwari.com/sitemap.xml

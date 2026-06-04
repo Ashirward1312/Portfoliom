@@ -10,7 +10,7 @@ export default function Achievements() {
     "YUVA GAURAV SAMAAN Award by the Chamber of Commerce.",
     "Executive Vice President, YUVA CAIT Chhattisgarh – driving policy and innovation in the real estate ecosystem.",
     "Pioneer of India’s First MBA in Real Estate Program, empowering future leaders in property development and investment.",
-    "Project Leadership for top developers including Avinash Group and VB Tower (Mova), backed by Shri Brijmohan Agrawal, Member of Parliament and former minister.",
+    "Project Leadership for top developers including Avinash Group and VB Tower (Mowa), backed by Shri Brijmohan Agrawal, Member of Parliament and former minister.",
     "Pan-India Broker Network Development, enabling seamless property transactions and strategic partnerships.",
     "Introduced Co-Ownership in Real Estate in collaboration with leading fintech firm RealX India, revolutionizing property investment models.",
     "Founder of India’s first real estate co‑working & community HEADQUARTER in Raipur with IREF and Anjaneya University — a hub for collaboration, innovation, and growth.",

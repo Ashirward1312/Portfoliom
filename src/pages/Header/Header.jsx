@@ -194,7 +194,7 @@ export default function Header() {
   const nav = [
     { label: "Home", to: "/#home" },
     { label: "Experties", to: "/#expertise" },
-    { label: "Gallery", to: "/gallery" },      // 👈 yahan ab route hai
+    // { label: "Gallery", to: "/gallery" },      // 👈 yahan ab route hai
     { label: "Testimonials", to: "/#testimonials" },
   ];
 

@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Agar file ya folder exist karta hai to direct open hone do
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Baaki sab requests ko index.html par bhejo
+  RewriteRule ^ index.html [L]
+</IfModule>
